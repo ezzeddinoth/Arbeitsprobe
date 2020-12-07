@@ -10,7 +10,6 @@ import probe.smallProject.Model.Login;
 
 @Repository
 public interface LoginRepository extends CrudRepository<Login, Long> {
-	//@Query(value = "SELECT CASEWHEN((email is not null),true,false) FROM LOGIN WHERE EMAIL= ?1 ", nativeQuery = true)
 	@Query(value = "SELECT COUNT(*) FROM LOGIN WHERE EMAIL= ?1 ", nativeQuery = true)
 	public int existsByEmail(String email);
 	

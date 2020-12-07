@@ -1,11 +1,3 @@
-insert into student(ID,NAME,passport_number) values(1,'EZZ','123DF43R$521');
-insert into subject (ID,NAME, Student_ID, Note) values (1,'JAVA', 1,'SEHT_GUT');
-insert into subject (ID,NAME, Student_ID, Note) values (2,'Spring', 1,'SEHT_GUT');
-
-
-
-
-
 INSERT INTO PRODUCT VALUES(1,'An Amazing Book','MyBook',100,'BOOK') ;
 INSERT INTO Person values (1, 'EZZ', 'OTH');
 INSERT INTO ORDER_ VALUES(1,1,'YES',1,1);

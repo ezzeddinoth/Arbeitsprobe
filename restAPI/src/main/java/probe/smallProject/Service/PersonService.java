@@ -1,7 +1,6 @@
 package probe.smallProject.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 
@@ -28,11 +27,6 @@ public class PersonService {
     	Set<Person> personSet = new HashSet<Person>();
         iterable.forEach(e-> personSet.add(e));
     	return personSet;
-    }
-    
-    public Optional<Person> findById(Long id) {
-    	
-    	return personRepository.findById(id);
     }
     
     public void deleteById(Long id) {

@@ -2,7 +2,6 @@ package probe.smallProject.Controller;
 
 
 import java.util.Set;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,13 +33,6 @@ public class OrderController {
 
     	orderService.findAll().forEach(item->System.out.println(item));
         return orderService.findAll();
-    } 
-    
-    @GetMapping(  path = "/order", 
-            produces = "application/json") 
-    public Optional<Order> getOrderById(@RequestParam Long id) {
-    
-        return orderService.findById( id);
     } 
     
     @DeleteMapping(path = "/order", 

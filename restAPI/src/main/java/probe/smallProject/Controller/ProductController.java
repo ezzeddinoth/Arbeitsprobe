@@ -1,7 +1,5 @@
 package probe.smallProject.Controller;
 
-
-import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import probe.smallProject.Model.Person;
 import probe.smallProject.Model.Product;
 import probe.smallProject.Service.ProductService;
 
@@ -35,12 +32,6 @@ public class ProductController {
         return productService.findAll();
     } 
     
-    @GetMapping(  path = "/product", 
-            produces = "application/json") 
-    public Optional<Product> getOrderById(@RequestParam Long id) {
-    
-        return productService.findById(id);
-    } 
     
     @DeleteMapping(path = "/product", 
             produces = "application/json")

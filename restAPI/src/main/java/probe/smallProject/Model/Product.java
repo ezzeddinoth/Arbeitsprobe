@@ -1,7 +1,8 @@
 package probe.smallProject.Model;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -56,7 +57,7 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return getClass().hashCode();
+        return Objects.hash(getProductId());
     }
 	@Override
 	public String toString() {

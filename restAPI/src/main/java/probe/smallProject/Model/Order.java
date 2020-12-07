@@ -1,8 +1,9 @@
 package probe.smallProject.Model;
 
+import java.util.Objects;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -73,7 +74,7 @@ public class Order {
 
     @Override
     public int hashCode() {
-        return getClass().hashCode();
+        return Objects.hash(getOrderId());
     }
 
 	@Override
@@ -81,8 +82,5 @@ public class Order {
 		return "Order [orderId=" + orderId + ", person=" + person + ", product=" + product + ", paid=" + paid
 				+ ", numberOfItems=" + numberOfItems + "]";
 	}
-    
-    
-	
 
 }

@@ -1,7 +1,6 @@
 package probe.smallProject.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 
@@ -28,10 +27,6 @@ public class ProductService {
     	Set<Product> productSet = new HashSet<Product>();
         iterable.forEach(e-> productSet.add(e));
     	return productSet;
-    }
-    
-    public Optional<Product> findById(Long id) {
-    	return productRepository.findById(id);
     }
     
     public void deleteById(Long id) {

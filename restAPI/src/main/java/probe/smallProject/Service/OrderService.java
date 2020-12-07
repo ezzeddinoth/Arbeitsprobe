@@ -1,7 +1,6 @@
 package probe.smallProject.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 
@@ -30,9 +29,6 @@ public class OrderService {
     	return personSet;
     }
     
-    public Optional<Order> findById(Long id) {
-    	return orderRepository.findById(id);
-    }
     
     public boolean  deleteById(Long id) {
     	//TODO check exists, check if needed
