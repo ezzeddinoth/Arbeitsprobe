@@ -9,4 +9,3 @@ import probe.smallProject.Model.Product;
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
 }
-

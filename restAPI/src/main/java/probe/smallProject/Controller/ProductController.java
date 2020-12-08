@@ -15,43 +15,35 @@ import org.springframework.web.bind.annotation.RestController;
 import probe.smallProject.Model.Product;
 import probe.smallProject.Service.ProductService;
 
-
 @RestController
-@RequestMapping(path = "/product") 
+@RequestMapping(path = "/product")
 public class ProductController {
-	
-    @Autowired
-    ProductService productService;
- 
 
-    @GetMapping(  path = "/all", 
-            produces = "application/json") 
-    public Set<Product> allUsers() {
+	@Autowired
+	ProductService productService;
 
- 
-        return productService.findAll();
-    } 
-    
-    
-    @DeleteMapping(path = "/product", 
-            produces = "application/json")
-    public void deleteById(@RequestParam Long id) {
-    	productService.deleteById(id);
-    }
-    
-    @PutMapping(path = "/product", 
-            produces = "application/json")
-    public void updatePerson(@RequestBody Product product) {
-    	productService.updateProduct(product);
- 
-    }
-    
-    @PostMapping(path = "/product", 
-            produces = "application/json")
-    public void savePerson(@RequestBody Product  product) {   	
-    	productService.saveProduct(product);
- 
-    }
-    //https://jaxenter.de/spring-boot-tutorial-54020
-   
+	@GetMapping(path = "/all", produces = "application/json")
+	public Set<Product> allUsers() {
+
+		return productService.findAll();
+	}
+
+	@DeleteMapping(path = "/product", produces = "application/json")
+	public void deleteById(@RequestParam Long id) {
+		productService.deleteById(id);
+	}
+
+	@PutMapping(path = "/product", produces = "application/json")
+	public void updatePerson(@RequestBody Product product) {
+		productService.updateProduct(product);
+
+	}
+
+	@PostMapping(path = "/product", produces = "application/json")
+	public void savePerson(@RequestBody Product product) {
+		productService.saveProduct(product);
+
+	}
+	// https://jaxenter.de/spring-boot-tutorial-54020
+
 }

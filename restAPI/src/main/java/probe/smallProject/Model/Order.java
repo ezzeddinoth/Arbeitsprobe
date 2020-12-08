@@ -12,21 +12,21 @@ import javax.persistence.Table;
 @Table(name = "ORDER_")
 public class Order {
 	@Id
-	//@GeneratedValue
+	// @GeneratedValue
 	private Long orderId;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Person person;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
-	private  Product product;
+	private Product product;
 
 	public Long getOrderId() {
 		return orderId;
 	}
-	
+
 	private String paid;
-	
+
 	private int numberOfItems;
 
 	public void setOrderId(Long orderId) {
@@ -40,7 +40,7 @@ public class Order {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-	
+
 	public Product getProduct() {
 		return product;
 	}
@@ -66,16 +66,18 @@ public class Order {
 	}
 
 	@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;             
-        if (!(o instanceof Order)) return false;            
-        return orderId != null && orderId.equals(((Order) o).getOrderId());
-    }
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Order))
+			return false;
+		return orderId != null && orderId.equals(((Order) o).getOrderId());
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getOrderId());
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(getOrderId());
+	}
 
 	@Override
 	public String toString() {

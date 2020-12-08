@@ -1,6 +1,5 @@
 package probe.smallProject.Controller;
 
-
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,46 +15,38 @@ import org.springframework.web.bind.annotation.RestController;
 import probe.smallProject.Model.Order;
 import probe.smallProject.Service.OrderService;
 
-
-
-
 @RestController
-@RequestMapping(path = "/order") 
+@RequestMapping(path = "/order")
 public class OrderController {
-	
-    @Autowired
-    OrderService orderService;
- 
 
-    @GetMapping(  path = "/all", 
-            produces = "application/json") 
-    public Set<Order> allUsers() {
+	@Autowired
+	OrderService orderService;
 
-    	orderService.findAll().forEach(item->System.out.println(item));
-        return orderService.findAll();
-    } 
-    
-    @DeleteMapping(path = "/order", 
-            produces = "application/json")
-    public void deleteById(@RequestParam Long id) {
-    	orderService.deleteById(id);
- 
-    }
-    
-    @PutMapping(path = "/order", 
-            produces = "application/json")
-    public void updatePerson(@RequestBody Order order) {
-    	System.out.println(order);
-    	orderService.updateOrder(order);
- 
-    }
-    
-    @PostMapping(path = "/order", 
-            produces = "application/json")
-    public void savePerson(@RequestBody Order  order) {   	
-    	System.out.println(order);
-    	orderService.saveOrder(order);
- 
-    }
-   
+	@GetMapping(path = "/all", produces = "application/json")
+	public Set<Order> allUsers() {
+
+		orderService.findAll().forEach(item -> System.out.println(item));
+		return orderService.findAll();
+	}
+
+	@DeleteMapping(path = "/order", produces = "application/json")
+	public void deleteById(@RequestParam Long id) {
+		orderService.deleteById(id);
+
+	}
+
+	@PutMapping(path = "/order", produces = "application/json")
+	public void updatePerson(@RequestBody Order order) {
+		System.out.println(order);
+		orderService.updateOrder(order);
+
+	}
+
+	@PostMapping(path = "/order", produces = "application/json")
+	public void savePerson(@RequestBody Order order) {
+		System.out.println(order);
+		orderService.saveOrder(order);
+
+	}
+
 }
