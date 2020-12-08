@@ -1,7 +1,5 @@
 package probe.smallProject.Controller;
 
-
-
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,42 +15,34 @@ import org.springframework.web.bind.annotation.RestController;
 import probe.smallProject.Model.Person;
 import probe.smallProject.Service.PersonService;
 
-
-
 @RestController
-@RequestMapping(path = "/person") 
+@RequestMapping(path = "/person")
 public class PersonController {
-	
-    @Autowired
-    PersonService personService;
- 
 
-    @GetMapping(  path = "/all", 
-            produces = "application/json") 
-    public Set<Person> allUsers() { 
-        return personService.findAll();
-    } 
-    
-    @DeleteMapping(path = "/person", 
-            produces = "application/json")
-    public void deleteById(@RequestParam Long id) {
-    	personService.deleteById(id);
- 
-    }
-    
-    @PutMapping(path = "/person", 
-            produces = "application/json")
-    public void updatePerson(@RequestBody Person person) {
-    	personService.updatePerson(person);
- 
-    }
-    
-    @PostMapping(path = "/person", 
-            produces = "application/json")
-    public void savePerson(@RequestBody Person  person) {   	
-    	personService.savePerson(person);
- 
-    }
-   
-   
+	@Autowired
+	PersonService personService;
+
+	@GetMapping(path = "/all", produces = "application/json")
+	public Set<Person> allUsers() {
+		return personService.findAll();
+	}
+
+	@DeleteMapping(path = "/person", produces = "application/json")
+	public void deleteById(@RequestParam Long id) {
+		personService.deleteById(id);
+
+	}
+
+	@PutMapping(path = "/person", produces = "application/json")
+	public void updatePerson(@RequestBody Person person) {
+		personService.updatePerson(person);
+
+	}
+
+	@PostMapping(path = "/person", produces = "application/json")
+	public void savePerson(@RequestBody Person person) {
+		personService.savePerson(person);
+
+	}
+
 }

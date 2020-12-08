@@ -1,17 +1,16 @@
 package probe.smallProject.Model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Login {
 	@Id
-	//@GeneratedValue
+	// @GeneratedValue
 	private String email;
-	
+
 	private String password;
-	
+
 	public String rolle;
 
 	public String getEmail() {
@@ -39,17 +38,18 @@ public class Login {
 	}
 
 	@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;             
-        if (!(o instanceof Login)) return false;            
-        return email != null && email.equals(((Login) o).getEmail());
-    }
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Login))
+			return false;
+		return email != null && email.equals(((Login) o).getEmail());
+	}
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
-
+	@Override
+	public int hashCode() {
+		return getClass().hashCode();
+	}
 
 	@Override
 	public String toString() {
