@@ -1,5 +1,7 @@
 package probe.smallProject.Model;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -37,19 +39,6 @@ public class Login {
 		this.rolle = rolle;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof Login))
-			return false;
-		return email != null && email.equals(((Login) o).getEmail());
-	}
-
-	@Override
-	public int hashCode() {
-		return getClass().hashCode();
-	}
 
 	@Override
 	public String toString() {

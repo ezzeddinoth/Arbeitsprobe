@@ -19,13 +19,11 @@ public class LoginController {
 
 	@GetMapping(path = "/credentials", produces = "application/json")
 	public String getRolle(@RequestParam String email, @RequestParam String password) {
-		System.out.println(email);
 		return loginService.getRolle(email, password);
 	}
 
 	@GetMapping(path = "/login", produces = "application/json")
 	public boolean emailexists(@RequestParam String email) {
-
 		return loginService.emailExists(email);
 	}
 

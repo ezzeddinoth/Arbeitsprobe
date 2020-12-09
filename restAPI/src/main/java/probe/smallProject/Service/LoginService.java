@@ -1,7 +1,5 @@
 package probe.smallProject.Service;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import probe.smallProject.Model.Login;
@@ -13,12 +11,6 @@ public class LoginService {
 	@Autowired
 	private LoginRepository loginRepository;
 
-	public Set<Login> findAll() {
-		Iterable<Login> iterable = loginRepository.findAll();
-		Set<Login> personSet = new HashSet<Login>();
-		iterable.forEach(e -> personSet.add(e));
-		return personSet;
-	}
 
 	public boolean emailExists(String email) {
 		return loginRepository.existsByEmail(email) == 1;

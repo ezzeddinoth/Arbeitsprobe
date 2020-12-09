@@ -44,6 +44,5 @@ public class ProductController {
 		productService.saveProduct(product);
 
 	}
-	// https://jaxenter.de/spring-boot-tutorial-54020
 
 }
